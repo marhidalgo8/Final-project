@@ -9,93 +9,245 @@ body {
   margin: 0;
 }
 
-nav li{
-    display: inline-block;
-    font-size: x-large;
+/* ================= NAV ================= */
+
+nav {
+  background-color: rgb(245, 245, 245);
+  width: 95%;
+  margin: 40px auto 20px auto;
+  padding: 15px 0;
+  text-align: center;
 }
 
-nav a{
-    text-decoration: none;
-    color:inherit
+nav ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+  color: #4a6fa5;
 }
 
-nav{
-  background-color: rgb(245, 245, 245);
-  width: 80%;
-  margin: 60px auto 20px auto;
-  padding: 15px 0;
-  text-align: left;
-  gap: 80px;
+/* ================= IMAGES BOX MODEL ================= */
+
+img {
+  border: 3px solid #ffffff;
+  padding: 6px;
+  border-radius: 15px;
+  box-sizing: border-box;
 }
+
+/* ================= HEADER ================= */
 
 .grid-header {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    gap: 20px;
-    text-align: center;
-    font-size: larger;
-
-    background-color: #b4b3cf;
-    border-radius: 20px;
-    padding: 40px;
-
-    max-width: 1000px;
-    margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  background-color: #b4b3cf;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
 }
 
 .grid-header img {
-    width: 300px;
-    border-radius: 50%;
-    font-size: larger;
+  width: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
-.grid-sobremi{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    align-items: center;
-    margin: black 1px;
-    background-color: rgb(137, 115, 141);
-    opacity: 90%;
-    text-align: center;
-    font-size: large;
+/* ================= SOBRE MI ================= */
 
-
-    max-width: 1000px;
-    max-height: 800px;
-    margin: 20px auto;
+.grid-sobremi {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+  background-color: rgb(137, 115, 141);
+  text-align: center;
+  color: white;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 20px auto;
+  border-radius: 20px;
 }
 
-.grid-sobremi img{
-    width: 500px;
-    border-radius: 10%;
-    font-size: larger;
+.grid-sobremi img {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-footer{
+/* ================= FOOTER ================= */
+
+footer {
   background-color: rgb(245, 245, 245);
-  width: 80%;
+  width: 95%;
   margin: 60px auto 20px auto;
   padding: 15px 0;
   text-align: center;
 }
 
+/* ================= SKIP LINK ================= */
+
 .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 10px;
-    background: black;
-    color: white;
-    padding: 8px 12px;
-    text-decoration: none;
-    z-index: 100;
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: black;
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  z-index: 100;
 }
 
 .skip-link:focus {
-    top: 10px;
+  top: 10px;
+}
+
+/* ================= SERIES FAVORITAS ================= */
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 260px;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 40px;
+  color: black;
+}
+
+/* ================= GALERIAS RESPONSIVAS ================= */
+
+.gallery-3x3,
+.sb-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+/* Transición suave en imágenes */
+.gallery-3x3 img,
+.sb-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover interesante */
+.gallery-3x3 img:hover,
+.sb-gallery img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ================= nth-child SELECTOR ================= */
+
+/* Imágenes impares */
+.sb-gallery img:nth-child(odd) {
+  border-radius: 50%;
+}
+
+/* Imágenes pares */
+.sb-gallery img:nth-child(even) {
+  border-radius: 15px;
+}
+
+/* ================= SECCIONES GRID ================= */
+
+.grid-sb,
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  background-color: rgb(62, 62, 165);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  color: aliceblue;
+}
+
+.grid-sb img,
+.container img {
+  width: 200px;
+  margin: 0 auto;
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 900px) {
+
+  .grid-header {
+    grid-template-columns: 1fr 2fr;
+    padding: 70px;
+  }
+
+  .grid-sobremi {
+    grid-template-columns: 2fr 1fr;
+    padding: 70px;
+  }
+
+  .grid-sb,
+  .container {
+    grid-template-columns: 2fr 1fr;
+    padding: 70px;
+  }
+
+  .grid-header img,
+  .grid-sb img,
+  .container img {
+    width: 300px;
+  }
+
+  footer {
+    width: 80%;
+  }
 }
